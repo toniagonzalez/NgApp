@@ -8,13 +8,14 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 export class AddUpdateNotesComponent implements OnInit {
   @Output() noteCreated = new EventEmitter<any>();
   @Input() note: any;
+  @Input() isViewable: boolean;
   constructor() {
     this.clearNotes();
   }
   ngOnInit() {
-
+    this.isViewable = true;
   }
-  
+ 
   // Create an empty note object
   private clearNotes = function () {
     this.note = {
@@ -26,5 +27,7 @@ export class AddUpdateNotesComponent implements OnInit {
   public addUpdateNote = function(event) {
     this.noteCreated.emit(this.note);
     this.clearNotes();
+    this.isViewable = false;
   };
+
 }

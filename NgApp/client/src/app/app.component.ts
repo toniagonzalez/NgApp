@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  //variable to hide or show add note component
+  //variable to hide or show 'add note' component
   public isViewable: boolean;
 
   //class function to display note
